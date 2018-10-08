@@ -7,6 +7,7 @@ const winston = require("winston");
 module.exports = function (app) {
     //zeby jsony prtzetwarzalo z req itd
     app.use(express.json());
+    app.use(express.urlencoded());
 
     //endpointy z users, dodaje od razu /users nie tr
     app.use('/users', users);

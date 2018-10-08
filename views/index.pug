@@ -3,20 +3,14 @@ html
         title= title
     body
         h1= message
-        form(method='POST' action='/register')
-            div.form-group
-                label(for='name') Name:
-                input#name.form-control(type='text', placeholder='first and last' name='name')
-            div.form-group
+        form(method='POST' action='/users')
+            div
+                label(for='login') login:
+                input(type='text', placeholder='wpisz login' name='login')
+            div
+                label(for='password') password:
+                input(type='text', placeholder='wpisz hasło' name='password')
+            div
                 label(for='email') Email:
-                input#email.form-control(type='email', placeholder='name@email.com' name='email')
-            div.form-group
-                label(for='favoriteBook') Favorite Book:
-                input#favoriteBook.form-control(type='text', placeholder='title of book' name='favoriteBook')
-            div.form-group
-                label(for='pw') Password:
-                input#pw.form-control(type='password' name='password')
-            div.form-group
-                label(for='pw2') Confirm Password:
-                input#pw2.form-control(type='password' name='confirmPassword')
-            button.btn.btn-primary(type='submit') Sign up
+                input(type='email', placeholder='name@email.com' name='email')
+            button(type='submit') Sign up

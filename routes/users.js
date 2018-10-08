@@ -54,8 +54,8 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        throw new Error("HQA");
         //walidacja funkcja 
+        console.log(req.body);
         const result = validateUser(req.body);
         // const result = (req.body);
         //sprawdzanie czuy nie ma bledow
