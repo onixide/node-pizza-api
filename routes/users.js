@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { Users, validateUser} = require("../models/users");
+const _ = require("lodash");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 //Tworzenie schema, do klasy schema podawany obiekt
 // const userSchema = ;
 //tworzenie modelu, w basie bedzie users a tu tworezenie user i dodawanie schemy. Users to klasa
@@ -50,6 +54,7 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
+        throw new Error("HQA");
         //walidacja funkcja 
         const result = validateUser(req.body);
         // const result = (req.body);
@@ -60,16 +65,51 @@ router.post('/', async (req, res, next) => {
             return res.status(400).send(result.error.details[0].message + "błąd z routera");
             // return res.status(404).send(result.error);
         }
+
+        let user = await Users.findOne({email: req.body.email}) || await Users.findOne({login: req.body.login});
+        
+        if(user) return res.status(400).send("Login lub email istnieje już w bazie");
         //tworzenie nowego dokumentu? 
-        let user = new Users(req.body);
+        //bez lodasha
+        // user = new Users({
+        //     login: req.body.login,
+        //     password: req.body.password,
+        //     email: req.body.email
+        // });
+
+        // z lodashem
+
+        user = new Users(_.pick(req.body, ["login", "password", "email"]));
+
+
+
+
+        let salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
+
+
+
         //zapis i nadpisanie zmienna zapisanymi danymi asynchronicznie
         user = await user.save();
         //zwrotka do klienta zapisanymi danymi z bazy ( z key itd)
-        res.send(user);
+        
+        //bez lodasha
+        // res.send({
+        //     login: user.login,
+        //     email: user.email
+        // });
+
+
+        //takie jakby logowanie odrazu po rejestracji
+        const token = user.generateJWTToken();
+
+
+        res.header('x-auth-token', token).send(_.pick(user, ['login', 'email']));
     }
     catch (ex) { 
-        // next(ex);
-console.log(ex);
+        console.log(ex.message);
+        // res.send(ex.message);
+        next(ex);
     // catch do mongoose, jakby nie bylo joi to wtedy wyswietla wszystkie bledy.message 8.5
     //     for(field in ex.errors) {
     //         console.log(ex.errors[field].message);
