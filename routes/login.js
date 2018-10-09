@@ -39,6 +39,7 @@ router.post('/', async (req, res, next) => {
         req.cookies = ("AAA", "BBB");
         req.session.login = user.login;
         req.session.scopex = user.scopex;
+        req.session._id = user._id;
         console.log('----');
         console.log(user.scopex);
         console.log(user.email);

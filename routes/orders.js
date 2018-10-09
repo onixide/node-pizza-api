@@ -5,18 +5,28 @@ const { Order, validateOrder} = require("../models/order");
 const {Users} = require("../models/users");
 const cookieParser = require("cookie-parser");
 
-router.get('/', auth,  async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         console.log(req.session.login);
         console.log("sesjaaaa");
         console.log(req.session);
         console.log(req.cookies);
         // res.render("allOrders", {title: "pizzaapp", message: "all orders view"});
-        res.send(await Order
-            .find()
-            //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
-            .populate("user", "login") 
-        )
+        if(req.session.scopex === undefined) return res.send("zaloguj sie");
+
+        if(req.session.scopex === "admin"){
+            res.send(await Order
+                .find()
+                //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
+                .populate("user", "login") 
+            )
+        }else {
+            res.send(await Order
+                .find({user: req.session._id})
+                //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
+                .populate("user", "login") 
+            )
+        }
     }
     catch(ex){
         // next(ex);
