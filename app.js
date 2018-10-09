@@ -4,17 +4,27 @@ const app = express();
 // require("express-async-errors");
 const morgan = require('morgan');
 const helmet = require('helmet');
+const session = require('express-session');
+const cookieParser = require("cookie-parser");
 
 app.use(express.static('public'));
 
 //wazne zeby na poczatku bo to obsluga bledow, zeby mozliwe bylo przechwytywanie z pozniejszych require
 require("./start/logging")();
 
-
 app.set("view engine", "pug");
 
+app.use(cookieParser());
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge: 60000 }
+}));
+
+console.log(session);
 app.get('/', (req, res, next) => {
-res.render("index", {title: "dadsa", message: "bbbbbbbbbbb"});
+res.redirect("/login");
 });
 
 //ochrona naglowkow???? http

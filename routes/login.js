@@ -7,6 +7,14 @@ const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 
 
+router.get("/", (req, res, next) => {
+    console.log(req.session);
+    console.log("HHH");
+    if(req.session.login !== undefined) return res.redirect("/orders");
+    res.render("login", {title: "pizzaapp", message: "login view"});
+
+});
+
 router.post('/', async (req, res, next) => {
     try {
         //walidacja funkcja 
@@ -24,9 +32,24 @@ router.post('/', async (req, res, next) => {
         if(!validPassword) return res.status(400).send("Zły login lub hasło (tu haslo xd)");
 
         const token = user.generateJWTToken();
+        console.log("------token decoded------");
+        console.log(jwt.decode(token));
+        console.log("----------------");
 
-
-        res.send(token);
+        req.cookies = ("AAA", "BBB");
+        req.session.login = user.login;
+        req.session.scopex = user.scopex;
+        console.log('----');
+        console.log(user.scopex);
+        console.log(user.email);
+        console.log('----');
+        console.log(user);
+        console.log(req.session.login);
+        console.log(req.session.scopex);
+        console.log(req.session);
+        console.log("^^^");
+        res.redirect('/orders');
+       
     }
     catch (ex) { 
         console.log(ex.message);

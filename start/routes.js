@@ -1,7 +1,8 @@
 const express = require('express');
 const users = require('../routes/users');
 const orders = require('../routes/orders');
-const auth = require('../routes/auth');
+const login = require('../routes/login');
+const logout = require('../routes/logout');
 const winston = require("winston");
 
 module.exports = function (app) {
@@ -13,7 +14,8 @@ module.exports = function (app) {
     app.use('/users', users);
     app.use('/orders', orders);
 
-    app.use('/auth', auth);
+    app.use('/login', login);
+    app.use('/logout', logout);
 
     //middleware do bledow, musi byc na k0ncu, pamietac o next w handlerze, chwyta TYLKO Z REQUEST PROCESIN PIPELINE wyjatki, ignoruje wszystko poza kontekstem expressa (pipeline chyba jest z ekspresa w takim razie ;p)
     app.use(function (err, req, res, next) {

@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
     login: { type: String, required: true, unique: true, minlength: 3, maxlength:255, trim: true },
     password: { type: String, required: true, minlength: 4, maxlength:1024, trim: true  },
     email: { type: String, required: true, unique: true, minlength: 1, maxlength:255, trim: true },
+    scopex: { type: String, enum: ['admin', 'user'], default: "user" },
     created: { type: Date, default: Date.now }
 
 });

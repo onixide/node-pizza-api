@@ -1,0 +1,13 @@
+html
+    head    
+        title= title
+    body
+        h1= message
+        form(method='POST' action='/login')
+            div
+                label(for='login') login:
+                input(type='text', placeholder='wpisz login' name='login')
+            div
+                label(for='password') password:
+                input(type='text', placeholder='wpisz hasło' name='password')
+            button(type='submit') Sign up
