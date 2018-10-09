@@ -7,14 +7,10 @@ const cookieParser = require("cookie-parser");
 
 router.get('/', async (req, res, next) => {
     try {
-        console.log(req.session.login);
-        console.log("sesjaaaa");
-        console.log(req.session);
-        console.log(req.cookies);
         // res.render("allOrders", {title: "pizzaapp", message: "all orders view"});
-        if(req.session.scopex === undefined) return res.send("zaloguj sie");
+        if(req.session.scope === undefined) return res.send("zaloguj sie");
 
-        if(req.session.scopex === "admin"){
+        if(req.session.scope === "admin"){
             res.send(await Order
                 .find()
                 //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow

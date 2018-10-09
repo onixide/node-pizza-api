@@ -8,8 +8,6 @@ const Joi = require("joi");
 
 
 router.get("/", (req, res, next) => {
-    console.log(req.session);
-    console.log("HHH");
     if(req.session.login !== undefined) return res.redirect("/orders");
     res.render("login", {title: "pizzaapp", message: "login view"});
 
@@ -38,15 +36,15 @@ router.post('/', async (req, res, next) => {
 
         req.cookies = ("AAA", "BBB");
         req.session.login = user.login;
-        req.session.scopex = user.scopex;
+        req.session.scope = user.scope;
         req.session._id = user._id;
         console.log('----');
-        console.log(user.scopex);
+        console.log(user.scope);
         console.log(user.email);
         console.log('----');
         console.log(user);
         console.log(req.session.login);
-        console.log(req.session.scopex);
+        console.log(req.session.scope);
         console.log(req.session);
         console.log("^^^");
         res.redirect('/orders');

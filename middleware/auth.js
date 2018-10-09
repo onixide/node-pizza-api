@@ -17,11 +17,11 @@ module.exports = function(req, res, next) {
     //     res.status(400).send("invalid token");
     // }
 
-    console.log(req.session.scopex);
+    console.log(req.session.scope);
     
     if(!req.session) return res.redirect("login");
 
-    if(req.session.scopex  !== "admin"){
+    if(req.session.scope  !== "admin"){
         return res.status(403).send("brak uprawnien admina");
     }
 

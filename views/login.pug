@@ -10,4 +10,23 @@ html
             div
                 label(for='password') password:
                 input(type='text', placeholder='wpisz hasło' name='password')
-            button(type='submit') Sign up
+            button(type='submit') Zaloguj
+
+        h1 rejestracja
+        form(method='POST' action='/users')
+            div
+                label(for='login') login:
+                input(type='text', placeholder='wpisz login' name='login')
+            div
+                label(for='password') password:
+                input(type='text', placeholder='wpisz hasło' name='password')
+            div
+                label(for='password') email:
+                input(type='text', placeholder='wpisz email' name='email')
+            div
+                label(for='scope') scope:
+                input(
+                    type='checkbox'
+                    name='scope'
+                    value='admin')
+            button(type='submit') Zarejestruj

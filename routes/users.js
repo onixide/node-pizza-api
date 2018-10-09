@@ -79,7 +79,7 @@ router.post('/', async (req, res, next) => {
 
         // z lodashem
 
-        user = new Users(_.pick(req.body, ["login", "password", "email"]));
+        user = new Users(_.pick(req.body, ["login", "password", "email", "scope"]));
 
 
 

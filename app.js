@@ -22,7 +22,6 @@ app.use(session({
     cookie: { secure: false, maxAge: 60000 }
 }));
 
-console.log(session);
 app.get('/', (req, res, next) => {
 res.redirect("/login");
 });
