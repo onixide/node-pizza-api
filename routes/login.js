@@ -9,7 +9,7 @@ const Joi = require("joi");
 
 router.get("/", (req, res, next) => {
     if(req.session.login !== undefined) return res.redirect("/orders");
-    res.render("login", {title: "pizzaapp", message: "login view"});
+    res.render("login");
 
 });
 

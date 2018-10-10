@@ -1,5 +1,1 @@
 
-
-
-
-localStorage.setItem('jwttoken', 'Tom');

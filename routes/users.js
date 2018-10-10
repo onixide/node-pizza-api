@@ -33,25 +33,6 @@ router.get('/:id', async (req, res, next) => {
 
 });
 
-
-// process.on("uncaughtException", ()=> {
-    
-//     console.log("xxxxxxxx uncaughtException");
-//     process.exit(1);
-// })
-
-
-// process.on("unhandledRejection", ()=> {
-    
-//     console.log("wwwwwwwww unhandledRejection");
-//     process.exit(1);
-
-// })
-
-// throw new Error("newwww errrorrrr");
-
-
-
 router.post('/', async (req, res, next) => {
     try {
         //walidacja funkcja 
