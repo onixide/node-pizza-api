@@ -36,7 +36,6 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         //walidacja funkcja 
-        console.log(req.body);
         const result = validateUser(req.body);
         // const result = (req.body);
         //sprawdzanie czuy nie ma bledow
@@ -59,15 +58,10 @@ router.post('/', async (req, res, next) => {
         // });
 
         // z lodashem
-
         user = new Users(_.pick(req.body, ["login", "password", "email", "scope"]));
-
-
-
 
         let salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
-
 
 
         //zapis i nadpisanie zmienna zapisanymi danymi asynchronicznie
@@ -84,7 +78,6 @@ router.post('/', async (req, res, next) => {
         //takie jakby logowanie odrazu po rejestracji
         const token = user.generateJWTToken();
 
-
         res.header('x-auth-token', token).send(_.pick(user, ['login', 'email']));
     }
     catch (ex) { 
@@ -99,7 +92,6 @@ router.post('/', async (req, res, next) => {
 
 });
 
-
 //update user
 router.put('/:id', async (req, res, next) => {
     try {
@@ -110,7 +102,6 @@ router.put('/:id', async (req, res, next) => {
             return res.status(400).send(result.error.details[0].message + " bat update body");
             // return res.status(404).send(result.error);
         }
-        console.log(result);
         const user = await Users.findByIdAndUpdate(req.params.id, result, { new: true });
 
         await res.send(` UPDATED TO ${user} `);
@@ -131,9 +122,6 @@ router.delete('/:id', async (req, res, next) => {
     }
     catch (ex) { next(ex); }
 });
-
-
-
 
 
 //pobieranie userów, konieczna asynchronicznosc bo inaczej nie zdarzy pobrac a wyswietli glupoty

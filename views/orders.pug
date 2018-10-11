@@ -1,4 +1,8 @@
-ul
-  each val, index in data
-    li= index + ': ' + val.user
-h1= log
+extends layout.pug
+
+block appContent
+		ul.orders-ul
+			each val, index in data
+				li.orders-li= index + ': ' + val.user
+		h1= log
+

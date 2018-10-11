@@ -30,31 +30,14 @@ router.post('/', async (req, res, next) => {
         if(!validPassword) return res.status(400).send("Zły login lub hasło (tu haslo xd)");
 
         const token = user.generateJWTToken();
-        console.log("------token decoded------");
-        console.log(jwt.decode(token));
-        console.log("----------------");
-
+       
         req.cookies = ("AAA", "BBB");
         req.session.login = user.login;
         req.session.scope = user.scope;
         req.session._id = user._id;
-        console.log('----');
-        console.log(user.scope);
-        console.log(user.email);
-        console.log('----');
-        console.log(user);
-        console.log(req.session.login);
-        console.log(req.session.scope);
-        console.log(req.session);
-        console.log("^^^");
         res.redirect('/orders');
-       
     }
-    catch (ex) { 
-        console.log(ex.message);
-        next(ex);
-     }
-
+    catch (ex) { next(ex); }
 });
 
 
@@ -62,7 +45,6 @@ router.post('/', async (req, res, next) => {
 
 
 function validate(obj){
-
     const schema = ({
         login: Joi.string().alphanum().min(3).max(255).required(),
         //mozna uzyc joi-password-comlexity do hasla zeby dodac jakies duze male litery itd
@@ -70,7 +52,6 @@ function validate(obj){
     });
 
     return Joi.validate(obj, schema);
-
 }
 
 module.exports = router;

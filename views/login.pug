@@ -1,30 +1,32 @@
 extends layout.pug
 
 block appContent
-    form(method='POST' action='/login')
-        div
-            label(for='login') login:
-            input(type='text', placeholder='wpisz login' name='login')
-        div
-            label(for='password') password:
-            input(type='text', placeholder='wpisz hasło' name='password')
-        button(type='submit') Zaloguj
-
-    h1 rejestracja
-    form(method='POST' action='/users')
-        div
-            label(for='login') login:
-            input(type='text', placeholder='wpisz login' name='login')
-        div
-            label(for='password') password:
-            input(type='text', placeholder='wpisz hasło' name='password')
-        div
-            label(for='password') email:
-            input(type='text', placeholder='wpisz email' name='email')
-        div
-            label(for='scope') scope:
-            input(
-                type='checkbox'
-                name='scope'
-                value='admin')
-        button(type='submit') Zarejestruj
+    .login-container    
+        h2 Logowanie
+        form(method='POST' action='/login')
+            div
+                label(for='login') Login:
+                input(type='text', placeholder='wpisz login' name='login')
+            div
+                label(for='password') Hasło:
+                input(type='text', placeholder='wpisz hasło' name='password')
+            button(type='submit') Zaloguj
+    .registration-container
+        h2 Rejestracja
+        form(method='POST' action='/users')
+            div
+                label(for='login') Login:
+                input(type='text', placeholder='wpisz login' name='login')
+            div
+                label(for='password') Hasło:
+                input(type='text', placeholder='wpisz hasło' name='password')
+            div
+                label(for='password') E-mail:
+                input(type='text', placeholder='wpisz email' name='email')
+            div
+                label(for='scope') Czy chcę być administratorem?
+                input(
+                    type='checkbox'
+                    name='scope'
+                    value='admin')
+            button(type='submit') Zarejestruj

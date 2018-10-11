@@ -2,14 +2,19 @@ doctype html
 html
     head    
         title app pica
+        link(rel='stylesheet', href='/css/base.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext')
     body
-        include includes/header.pug
-        nav
-            ul
-                li
+        nav.main-menu
+            .logo
+                include includes/header.pug
+                p pizza App
+            ul.main-menu__container
+                li.main-menu__item
                     a(href='/login') Login
-                li
+                li.main-menu__item
                     a(href='/orders') Orders
-                li
+                li.main-menu__item
                     a(href='/logout') logout   
-    block appContent            
+        .content
+            block appContent            

@@ -6,18 +6,18 @@ const { Users } = require("../models/users");
 
 router.get('/', async (req, res, next) => {
     try {
-        // res.render("allOrders", {title: "pizzaapp", message: "all orders view"});
         if (req.session.scope === undefined) return res.send("zaloguj sie");
 
         if (req.session.scope === "admin") {
-           const data = await Order
+            const data = await Order
                 .find()
                 //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
                 .populate("user", "login")
             console.log(data);
-            res.render("orders",
-            {data: data, 
-            log: req.session.login});
+            res.render("orders", {
+                data: data,
+                log: req.session.login
+            });
         }
         else {
             const data = await Order
@@ -25,7 +25,7 @@ router.get('/', async (req, res, next) => {
                 //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
                 .populate("user", "login")
 
-             res.render("orders", {data});
+            res.render("orders", { data });
         }
     }
     catch (ex) { next(ex); }
@@ -50,14 +50,8 @@ router.post('/', async (req, res, next) => {
         order = await order.save();
         res.send(order);
     }
-    catch (ex) {
-        // next(ex);
-        next(ex);
-    }
+    catch (ex) { next(ex); }
 });
-
-module.exports = router;
-
 
 router.put('/:id', async (req, res, next) => {
 
@@ -70,17 +64,11 @@ router.put('/:id', async (req, res, next) => {
         }
 
         const order = await Order.findByIdAndUpdate(req.params.id, result, { new: true });
-        if (!order) {
-            return res.status(400).send("Nie ma takiego zamówienia.")
-        }
+        if (!order) return res.status(400).send("Nie ma takiego zamówienia.")
 
         await res.send(` UPDATED ORDER TO ${order} `);
-
-
-    } catch (ex) {
-        next(ex);
     }
-
+    catch (ex) { next(ex); }
 });
 
 
@@ -92,10 +80,10 @@ router.delete("/:id", async (req, res, next) => {
         if (!order) {
             return res.status(404).send("Podane zamówienie nie istnieje!");
         }
+        
         res.send(` Usunięto zamówienie ${order}`);
     }
-    catch (ex) {
-        next(ex);
-    }
-
+    catch (ex) { next(ex); }
 });
+
+module.exports = router;
