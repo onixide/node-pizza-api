@@ -6,7 +6,7 @@ const { Users } = require("../models/users");
 
 router.get('/', async (req, res, next) => {
     try {
-        if (req.session.scope === undefined) return res.send("zaloguj sie");
+        if (req.session.scope === undefined) return res.redirect("/login");
 
         if (req.session.scope === "admin") {
             const data = await Order
@@ -30,7 +30,7 @@ router.get('/', async (req, res, next) => {
     }
     catch (ex) { next(ex); }
 });
-
+//logowanie
 router.post('/', async (req, res, next) => {
     try {
         // const result = validateOrder(req.body);

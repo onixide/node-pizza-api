@@ -1,3 +1,5 @@
+@import 'layout/layout';
+
 body {
     width: 90%;
     margin-left: auto;
@@ -53,15 +55,22 @@ body {
     flex-direction: column;
 }
 
-.orders-ul {
-    background-color: blue;
+
+.login-container {
     width: 100%;
-    list-style: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 50px;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.orders-li {
-    background-color: pink;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #000;
+
+.registration-container {
+    width: 100%;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
 }

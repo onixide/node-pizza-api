@@ -220,3 +220,16 @@
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-11T09:08:42.400Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-11T09:10:00.222Z"}
 {"code":"PUG:UNEXPECTED_NODES_IN_EXTENDING_ROOT","msg":"Only named blocks and mixins can appear at the top level of an extending template","line":4,"column":1,"filename":"C:\\Users\\Krzysztof Kasprzak\\Desktop\\nodeApi\\views\\login.pug"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T08:22:48.485Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T08:27:25.781Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T09:15:34.859Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T11:06:05.044Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T11:07:09.933Z"}
+{"code":"PUG:SYNTAX_ERROR","msg":"Syntax Error: Unexpected token","line":6,"column":121,"filename":"C:\\Users\\Krzysztof Kasprzak\\Desktop\\nodeApi\\views\\orders.pug"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T11:10:13.197Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T11:38:06.227Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T12:05:08.319Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T12:11:11.503Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T12:20:26.202Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T13:07:18.748Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-12T13:43:29.785Z"}

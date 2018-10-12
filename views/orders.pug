@@ -3,6 +3,13 @@ extends layout.pug
 block appContent
 		ul.orders-ul
 			each val, index in data
-				li.orders-li= index + ': ' + val.user
+				li.orders-li
+					ul.details-ul
+						li.details= index
+						li.details= "done " +  val.paid
+						li.details= "date " + val.date
+						li.details= 'user' + val.user.login
+			else
+				strong brak zamowien
 		h1= log
 
