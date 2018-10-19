@@ -41,14 +41,47 @@ router.post('/', async (req, res, next) => {
             // return res.status(404).send(result.error);
         }
 
-        const user = await Users.findById(req.body.user);
+        const user = await Users.findById(req.session._id);
         if (!user) {
             return res.status(400).send("Nie ma takiego użytkownika.")
         }
-
-        let order = new Order(req.body);
+        console.log(req.session.login);
+        let order = new Order({
+            user : req.session._id,
+            adress: {
+                ulica: req.body.ulica,
+                numer: req.body.numer,
+                kod: req.body.kod,
+                miasto: req.body.miasto
+            }
+        });
         order = await order.save();
         res.send(order);
+    }
+    catch (ex) { next(ex); }
+});
+
+
+
+router.get('/new', async (req, res, next) => {
+    try {
+        // // const result = validateOrder(req.body);
+        // const result = validateOrder(req.body);
+        // if (result.error) {
+        //     //zwracanie pola message z obiektu error z joi'a. gdy blad ofc
+        //     return res.status(400).send(result.error.details[0].message + " check");
+        //     // return res.status(404).send(result.error);
+        // }
+
+        // const user = await Users.findById(req.body.user);
+        // if (!user) {
+        //     return res.status(400).send("Nie ma takiego użytkownika.")
+        // }
+
+        // let order = new Order(req.body);
+        // order = await order.save();
+        // res.send(order);
+        res.render("new_order");
     }
     catch (ex) { next(ex); }
 });
@@ -87,3 +120,5 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 module.exports = router;
+
+//337cb7b7d358011ca7b85b8d8a25149876cc6be4 gh toekn do uploadow

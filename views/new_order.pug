@@ -1,0 +1,20 @@
+extends layout.pug
+
+block appContent
+    h2 new orders view
+    .new-order-container    
+        h3 Dane zamówienia
+        form(method='POST' action='/orders')
+            div
+                label(for='login') Ulica:
+                input(type='text', placeholder='wpisz login' name='ulica')
+            div
+                label(for='password') Numer domu:
+                input(type='text', placeholder='wpisz hasło' name='numer')
+            div
+                label(for='password') Kod pocztowy:
+                input(type='text', placeholder='wpisz email' name='kod')
+            div
+                label(for='password') Miasto:
+                input(type='text', placeholder='wpisz email' name='miasto')
+            button(type='submit') XXX
