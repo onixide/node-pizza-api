@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
                 .find({ user: req.session._id })
                 //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
                 .populate("user", "login")
-
+                //TODO dodac paginacje
             res.render("orders", { data });
         }
     }

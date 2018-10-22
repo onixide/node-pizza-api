@@ -7,7 +7,21 @@ const helmet = require('helmet');
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 
+const favicon = require('serve-favicon');
+const path = require('path');
+
+
+
+//ochrona naglowkow???? http
+app.use(helmet());
+//wyswietlanie w konsoli xzapytan http
+app.use(morgan('tiny'));
+
 app.use(express.static('public'));
+
+
+// app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')))
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 //wazne zeby na poczatku bo to obsluga bledow, zeby mozliwe bylo przechwytywanie z pozniejszych require
 require("./start/logging")();
@@ -19,17 +33,14 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 60000 }
+    cookie: { secure: false, maxAge: 600000 }
 }));
 
 app.get('/', (req, res, next) => {
 res.redirect("/login");
 });
 
-//ochrona naglowkow???? http
-app.use(helmet());
-//wyswietlanie w konsoli xzapytan http
-app.use(morgan('tiny'));
+
 
 //połączenie do bazy, mozna
 // const db = require("./start/db");

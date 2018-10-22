@@ -5,10 +5,25 @@ block appContent
 			each val, index in data
 				li.orders-li
 					ul.details-ul
-						li.details= index
-						li.details= "done " +  val.paid
-						li.details= "date " + val.date
-						li.details= 'user' + val.user.login
+						li.details= "Użytkownik: " + val.user.login
+
+						-let date = new Date(val.date) 
+						-let dd = date.getDate();
+						-let mm = date.getMonth()+1;
+						-let yyyy = date.getFullYear();
+						-let hh = date.getHours();
+						-let min = date.getMinutes();
+						-let printDate = mm + "/" + dd + "/" + yyyy + " - " + hh + " : " + min;
+
+						li.details= printDate
+
+						if val.done === true
+							li.details= "Zakończone: " +  val.done
+
+						if val.paid === true
+							li.details= "Zapłacone: " +  val.paid
+ 							
+						li.details= val.adress
 			else
 				strong brak zamowien
 		h1= log
