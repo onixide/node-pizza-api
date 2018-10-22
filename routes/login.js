@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 
-
 router.get("/", (req, res, next) => {
     if(req.session.login !== undefined) return res.redirect("/orders");
     res.render("login");
@@ -36,6 +35,7 @@ router.post('/', async (req, res, next) => {
         req.session.scope = user.scope;
         req.session._id = user._id;
         res.redirect('/orders');
+       
     }
     catch (ex) { next(ex); }
 });
