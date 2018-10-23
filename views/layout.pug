@@ -14,14 +14,16 @@ html
                 include includes/header.pug
                 p pizza App
             ul.main-menu__container
-                li.main-menu__item
-                    a(href='/login') Login
+            
+                if (user)
+                    li.main-menu__item
+                        a(href='/logout') logout   
+                else
+                    li.main-menu__item
+                        a(href='/login') Login
+            
                 li.main-menu__item
                     a(href='/orders') Orders
-                li.main-menu__item
-                    a(href='/logout') logout   
-                li.main-menu__item
-                    a(href='/login') Login             
         .content
             block appContent            
 

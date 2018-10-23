@@ -16,7 +16,8 @@ router.get('/', async (req, res, next) => {
             console.log(data);
             res.render("orders", {
                 data: data,
-                log: req.session.login
+                log: req.session.login,
+                user: req.session.login
             });
         }
         else {
@@ -81,7 +82,9 @@ router.get('/new', async (req, res, next) => {
         // let order = new Order(req.body);
         // order = await order.save();
         // res.send(order);
-        res.render("new_order");
+        res.render("new_order", {
+            user : req.session.login
+        });
     }
     catch (ex) { next(ex); }
 });
