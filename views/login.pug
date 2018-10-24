@@ -11,6 +11,7 @@ block appContent
                 label(for='password') Hasło:
                 input(type='text', placeholder='wpisz hasło' name='password')
             button(type='submit') Zaloguj
+            
     .registration-container
         h2 Rejestracja
         form(method='POST' action='/users')
@@ -21,7 +22,7 @@ block appContent
                 label(for='password') Hasło:
                 input(type='text', placeholder='wpisz hasło' name='password')
             div
-                label(for='password') E-mail:
+                label(for='email') E-mail:
                 input(type='text', placeholder='wpisz email' name='email')
             div
                 label(for='scope') Czy chcę być administratorem?

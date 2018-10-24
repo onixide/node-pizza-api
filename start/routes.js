@@ -1,6 +1,7 @@
 const express = require('express');
 const users = require('../routes/users');
 const orders = require('../routes/orders');
+const pizza = require('../routes/pizza');
 const login = require('../routes/login');
 const logout = require('../routes/logout');
 const winston = require("winston");
@@ -13,6 +14,7 @@ module.exports = function (app) {
     //endpointy z users, dodaje od razu /users nie tr
     app.use('/users', users);
     app.use('/orders', orders);
+    app.use('/orders/pizza', pizza);
     app.use('/login', login);
     app.use('/logout', logout);
 

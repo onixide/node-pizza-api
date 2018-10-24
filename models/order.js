@@ -26,8 +26,13 @@ function validateOrder(obj) {
             ulica: Joi.string(),
             numer: Joi.number(),
             kod: Joi.number(),
-            miasto: Joi.string()
-
+            miasto: Joi.string(),
+            adress: Joi.object({ 
+                ulica: Joi.string().required(),
+                numer: Joi.number().required(),
+                kod: Joi.number().required(),
+                miasto: Joi.string().required()
+            })
     });
 
     return Joi.validate(obj, schema);

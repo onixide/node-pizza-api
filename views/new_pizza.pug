@@ -1,0 +1,37 @@
+extends layout.pug
+
+block appContent
+    h2 new pizza view
+    .new-order-container    
+        h3 Dane pizzy
+        form(method='POST' action='/orders/pizza')
+            div
+                label(for='login') Nazwa:
+                input(type='text', placeholder='wpisz nazwe' name='name')
+            div
+                label(for='password') fi30:
+                input(type='text', placeholder='cena' name='fi30')
+            div
+                label(for='password') fi40:
+                input(type='text', placeholder='cena' name='fi40')
+            div
+                label(for='password') fi50:
+                input(type='text', placeholder='cena' name='fi50')
+            //- div
+            //-     label(for='password') Składniki:
+            //-     input(type='text', placeholder='wpisz email' name='components')
+            div
+                label(for='password') Dodatki:
+                input(type='text', placeholder='wpisz email' name='extras')
+            
+            -let skladniki=["ser", "szynka", "pieczarki", "szpinak"]
+            
+            each val, index in skladniki
+                div
+                    label(for='skladnik')= `${val} +++ ${index}`
+                    input(
+                        type='checkbox'
+                        name=`components[${index}]`
+                        value=`${val}`)
+
+            button(type='submit') Dodaj pizze

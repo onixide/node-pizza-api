@@ -5,7 +5,7 @@ block appContent
 			each val, index in data
 				li.orders-li
 					ul.details-ul
-						li.details= "Użytkownik: " + val.user.login
+						li.details= `Użytkownik: ${val.user.login}`
 
 						-let date = new Date(val.date) 
 						-let dd = date.getDate();
@@ -13,17 +13,18 @@ block appContent
 						-let yyyy = date.getFullYear();
 						-let hh = date.getHours();
 						-let min = date.getMinutes();
-						-let printDate = mm + "/" + dd + "/" + yyyy + " - " + hh + " : " + min;
+						-let printDate = `${mm} / ${dd} / ${yyyy} - ${hh} : ${min}`;
 
 						li.details= printDate
 
 						if val.done === true
-							li.details= "Zakończone: " +  val.done
+							li.details= `Zakończone: ${val.done}`
 
 						if val.paid === true
-							li.details= "Zapłacone: " +  val.paid
+							li.details= `Zapłacone: ${val.paid}`
  							
-						li.details= val.adress
+						//- li.details= "Dostarczono na adres" + val.adress.ulica + " " + val.adress.numer + val.adress.kod + val.adress.miasto
+						li.details= `Dostarczono na adres ${val.adress.ulica} ${val.adress.numer} ${val.adress.kod} ${val.adress.miasto}`
 			else
 				strong brak zamowien
 		h1= log
