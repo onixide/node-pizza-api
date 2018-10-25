@@ -10,8 +10,9 @@ const Pizza = mongoose.model('Pizzas', new mongoose.Schema({
         fi40: Number,
         fi50: Number
     },
-    components: { type: String },
-    extras: String
+    components: { type: Array },
+    extras: String,
+    select_x: String
 //TODO enum czy cos zanim do bazy pojdzie
 }));
 
@@ -25,7 +26,8 @@ function validatePizza(obj) {
             fi40: Joi.number().min(0),
             fi50: Joi.number().min(0),
             components: Joi.array().items(Joi.string().valid("ser", "szynka", "pieczarki", "szpinak")),
-            extras: Joi.string()
+            extras: Joi.string(),
+            select_x: Joi.string()
 
     });
 

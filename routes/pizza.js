@@ -25,14 +25,15 @@ router.get('/new', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         // const result = validateOrder(req.body);
-        const result = validatePizza(req.body);
-        if (result.error) {
-            //zwracanie pola message z obiektu error z joi'a. gdy blad ofc
-            return res.status(400).send(result.error.details[0].message + " check");
-            // return res.status(400).send(result.error);
-            // return res.status(404).send(result.error);
-        }
+        // const result = validatePizza(req.body);
+        // if (result.error) {
+        //     //zwracanie pola message z obiektu error z joi'a. gdy blad ofc
+        //     return res.status(400).send(result.error.details[0].message + " check");
+        //     // return res.status(400).send(result.error);
+        //     // return res.status(404).send(result.error);
+        // }
         console.log(req.body);
+        console.log("XXX");
         let pizza = new Pizza({
             name: req.body.name,
             size_price: {
