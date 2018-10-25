@@ -459,3 +459,8 @@
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T12:41:56.534Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T12:48:44.897Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T12:51:12.395Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T20:18:25.213Z"}
+{"code":"PUG:UNEXPECTED_TEXT","msg":"unexpected text \"\"pepp\"","line":49,"column":13,"filename":"C:\\Users\\Lulu\\Desktop\\nodeApi\\views\\new_pizza.pug"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T20:29:31.178Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T20:29:55.638Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-25T21:04:16.779Z"}

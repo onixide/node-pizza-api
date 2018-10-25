@@ -24,6 +24,15 @@
   padding-bottom: 5px;
 }
 
+.components-container {
+  background-color: red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 150px;
+}
+
 body {
   width: 90%;
   margin-left: auto;

@@ -45,16 +45,17 @@ block appContent
                 label(for='password') Dodatki:
                 input(type='text', placeholder='wpisz email' name='extras')
             
-            -let skladniki=["ser", "szynka", "pieczarki", "szpinak"]
+            -let skladniki=["mozzarella", "szynka", "pieczarki", "salami", "boczek",  "pepperoni", "kiełbasa", "wołowina", "kurczak", "ser górski", "ser gorgonzola", "ser camembert", "ser parmezan", "tuńczyk", "kabanos", "oliwki czarne", "oliwki zielone", "kukurydza", "ogórek", "pomidor", "cebula", "fasola", "jalapeno", "ananas", "papryka", "grube ciasto" ]
             
-            each val, index in skladniki
-                div
-                    label(for='skladnik')= `${val} +++ ${index}`
-                    input(
-                        type='checkbox'
-                        name=`components[${index}]`
-                        value=`${val}`)
-            
+            div.components-container
+                each val, index in skladniki
+                    div
+                        label(for='skladnik')= `${val} +++ ${index}`
+                        input(
+                            type='checkbox'
+                            name=`components[${index}]`
+                            value=`${val}`)
+                
             -let variables = ["jeden", "dwa", "trzy", "cztery"]
             select(name="select_x")
                 each variable, index in variables
