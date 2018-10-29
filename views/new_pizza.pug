@@ -41,24 +41,25 @@ block appContent
                     <input type="number" name="size_price[2][price]" />
        
 
-            div
-                label(for='password') Dodatki:
-                input(type='text', placeholder='wpisz email' name='extras')
+            //- div
+            //-     label(for='password') Dodatki:
+            //-     input(type='text', placeholder='wpisz email' name='extras')
             
             -let skladniki=["mozzarella", "szynka", "pieczarki", "salami", "boczek",  "pepperoni", "kiełbasa", "wołowina", "kurczak", "ser górski", "ser gorgonzola", "ser camembert", "ser parmezan", "tuńczyk", "kabanos", "oliwki czarne", "oliwki zielone", "kukurydza", "ogórek", "pomidor", "cebula", "fasola", "jalapeno", "ananas", "papryka", "grube ciasto" ]
             
             div.components-container
                 each val, index in skladniki
-                    div
-                        label(for='skladnik')= `${val} +++ ${index}`
+                    
                         input(
                             type='checkbox'
-                            name=`components[${index}]`
+                            name=`component`
+                            id=`component${index}`
                             value=`${val}`)
+                        label(for=`component${index}`)= `${val}`
                 
-            -let variables = ["jeden", "dwa", "trzy", "cztery"]
-            select(name="select_x")
-                each variable, index in variables
-                    option(value=`${variable}`)= `${variable} ++++ ${index}`
+            //- -let variables = ["jeden", "dwa", "trzy", "cztery"]
+            //- select(name="select_x")
+            //-     each variable, index in variables
+            //-         option(value=`${variable}`)= `${variable} ++++ ${index}`
 
             button(type='submit') Dodaj pizze
