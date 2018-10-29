@@ -74,6 +74,8 @@ router.get('/new', async (req, res, next) => {
         //     // return res.status(404).send(result.error);
         // }
 
+        
+
         // const user = await Users.findById(req.body.user);
         // if (!user) {
         //     return res.status(400).send("Nie ma takiego użytkownika.")

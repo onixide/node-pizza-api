@@ -41,9 +41,6 @@ router.post('/', async (req, res, next) => {
 });
 
 
-
-
-
 function validate(obj){
     const schema = ({
         login: Joi.string().alphanum().min(3).max(255).required(),
