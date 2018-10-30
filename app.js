@@ -10,7 +10,8 @@ const cookieParser = require("cookie-parser");
 const favicon = require('serve-favicon');
 const path = require('path');
 
-
+// process.env.NODE_ENV === 'production'
+console.log(process.env.NODE_ENV);
 
 //ochrona naglowkow???? http
 app.use(helmet());

@@ -1,5 +1,5 @@
 body {
-  width: 90%;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
   background-color: #F2C057;
@@ -96,9 +96,23 @@ body {
 .components-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   grid-auto-rows: 35px;
+}
+
+@media all and (min-width: 320px) {
+  .components-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (min-width: 480px) {
+  .components-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .component {
@@ -112,6 +126,13 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10px;
+}
+
+label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 input[type=checkbox] {
@@ -132,8 +153,8 @@ input[type=checkbox] + label::before {
 
 input[type=checkbox]:checked + label::before {
   content: "\2714";
-  border: 2px solid #486824;
-  color: #486824;
+  border: 2px solid #D13525;
+  color: #D13525;
   border-radius: 3px;
   width: 20px;
   height: 20px;
@@ -141,6 +162,45 @@ input[type=checkbox]:checked + label::before {
   display: inline-block;
   vertical-align: bottom;
   text-align: center;
+}
+
+.new-pizza-wrapper {
+  width: 95%;
+}
+
+.sizes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sizes {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 5px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: auto;
+}
+
+input[name^="size_price"] {
+  display: inline-block;
+  width: 30%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid green;
+  margin: 0;
+  height: 1.5em;
 }
 
 .content {

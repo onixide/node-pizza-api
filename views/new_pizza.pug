@@ -2,7 +2,7 @@ extends layout.pug
 
 block appContent
     h2 new pizza view
-    .new-order-container    
+    .new-pizza-wrapper   
         h3 Dane pizzy
         form(method='POST' action='/orders/pizza')
             div
@@ -23,23 +23,21 @@ block appContent
                         document.querySelector(".sizes-container").appendChild(fieldset);
                     });
                     
-                    
+                    //TODO form moze byc na zewnatrz, nie trzeba w srodku dodwawac - poczyrtac  
             div.sizes-container
-                fieldset
-                    <input type="text" name="size_price[0][name]" />
-                    <input type="number" name="size_price[0][size]" />
-                    <input type="number" name="size_price[0][price]" />
-           
-                fieldset
-                    <input type="text" name="size_price[1][name]" />
-                    <input type="number" name="size_price[1][size]" />
-                    <input type="number" name="size_price[1][price]" />
+                .sizes
+                    input(type="text" name="size_price[0][name]")
+                    input(type="number" name="size_price[0][size]") 
+                    input(type="number" name="size_price[0][price]")
+                .sizes
+                    input(type="text" name="size_price[1][name]")
+                    input(type="number" name="size_price[1][size]") 
+                    input(type="number" name="size_price[1][price]")
+                .sizes
+                    input(type="text" name="size_price[2][name]")
+                    input(type="number" name="size_price[2][size]") 
+                    input(type="number" name="size_price[2][price]")
 
-                fieldset
-                    <input type="text" name="size_price[2][name]" />
-                    <input type="number" name="size_price[2][size]" />
-                    <input type="number" name="size_price[2][price]" />
-       
 
             //- div
             //-     label(for='password') Dodatki:

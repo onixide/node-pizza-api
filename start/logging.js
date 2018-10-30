@@ -4,7 +4,7 @@ require("winston-mongodb");
 module.exports = function(){
     
     winston.add(winston.transports.File, { filename: "logfile.log" });
-    winston.add(winston.transports.MongoDB, { db: "mongodb://localhost/gunnar", level: "error" });  
+    winston.add(winston.transports.MongoDB, { db: "mongodb://database:123456a@ds046027.mlab.com:46027/pizza-app-kn-db", level: "error" });  
     
     //wyłapywanie exception poza expressem czy tam pipelinem aplikacji (pipeline to przechodzenie od req do res po koleji przez middleware itd. ) dodatkowo dziala tak tylko do synchronicznego kodu. 
     // process.on("uncaughtException", (ex) => {

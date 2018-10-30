@@ -1,0 +1,30 @@
+.new-pizza-wrapper  {
+    width: 95%;
+}
+
+.sizes-container {
+    display: flex;
+}
+
+.sizes {
+    width: 30%;
+    // flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    height: auto;
+}
+
+input[name^="size_price"] {
+    display: inline-block;
+    // float: left;
+    width: 30%;
+    box-sizing: border-box;
+    border: 1px solid green;
+    // padding: 5px;
+    margin: 0;
+    height: 1.5em;
+}

@@ -1,11 +1,13 @@
 @import 
-    '../scss/utils/variables';
+    '../scss/utils/variables',
+    '../scss/utils/media-queries';
 
 // @import
 //     '../scss/vendors/';
 
 @import
     '../scss/base/globals';
+    // '../scss/base/reset';
 
 @import
     '../scss/layout/header', 
@@ -13,7 +15,8 @@
 
 @import
     '../scss/components/login-registration',
-    '../scss/components/pizza-components';
+    '../scss/components/pizza-components',
+    '../scss/components/pizza-sizes';
 
 // @import
 //     '../scss/pages/';

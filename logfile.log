@@ -473,3 +473,29 @@
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-29T20:50:39.967Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-29T22:00:15.690Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-29T23:13:03.605Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T08:11:47.941Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T08:17:25.870Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T08:19:22.919Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T09:47:18.123Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T09:49:13.760Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T09:49:20.579Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:13:23.206Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:25:06.061Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:25:13.254Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:29:33.819Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:35:22.327Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T10:50:01.818Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T13:10:46.648Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T13:48:39.272Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T13:49:11.119Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:24:55.924Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:25:34.885Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:30:20.053Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:32:58.981Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:33:36.233Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:34:55.154Z"}
+{"code":"PUG:INCONSISTENT_INDENTATION","msg":"Inconsistent indentation. Expecting either 16 or 20 spaces/tabs.","line":32,"column":1,"filename":"C:\\Users\\Krzysztof Kasprzak\\Desktop\\nodeApi\\views\\new_pizza.pug"}
+{"code":"PUG:INCONSISTENT_INDENTATION","msg":"Inconsistent indentation. Expecting either 16 or 20 spaces/tabs.","line":32,"column":1,"filename":"C:\\Users\\Krzysztof Kasprzak\\Desktop\\nodeApi\\views\\new_pizza.pug"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:35:22.970Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:43:59.983Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:53:16.856Z"}

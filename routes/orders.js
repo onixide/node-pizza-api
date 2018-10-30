@@ -7,13 +7,12 @@ const { Users } = require("../models/users");
 router.get('/', async (req, res, next) => {
     try {
         if (req.session.scope === undefined) return res.redirect("/login");
-
+        console.log(req.session.login);
         if (req.session.scope === "admin") {
             const data = await Order
                 .find()
                 //wyszukiwanie i dodawanie dokumentu do dokumentu, pierwszy arg dotyczy pola, drugi to co pokazac jako jeden, z - do usunac z wynikow
                 .populate("user", "login")
-            console.log(data);
             res.render("orders", {
                 data: data,
                 log: req.session.login,
