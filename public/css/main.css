@@ -164,45 +164,6 @@ input[type=checkbox]:checked + label::before {
   text-align: center;
 }
 
-.new-pizza-wrapper {
-  width: 95%;
-}
-
-.sizes-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.sizes {
-  width: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 5px;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: auto;
-}
-
-input[name^="size_price"] {
-  display: inline-block;
-  width: 30%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid green;
-  margin: 0;
-  height: 1.5em;
-}
-
 .content {
   display: -webkit-box;
   display: -ms-flexbox;

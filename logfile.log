@@ -499,3 +499,23 @@
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:35:22.970Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:43:59.983Z"}
 {"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T14:53:16.856Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:06:37.638Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:39:04.116Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:40:44.378Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:41:04.979Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:41:36.886Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T20:43:17.678Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T21:07:11.294Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:16:56.570Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:18:58.935Z"}
+{"code":"PUG:SYNTAX_ERROR","msg":"Syntax Error: Unexpected token","line":41,"column":35,"filename":"C:\\Users\\Lulu\\Desktop\\nodeApi\\views\\new_pizza.pug"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:50:54.467Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:51:05.419Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:52:38.138Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:54:17.710Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T22:57:07.332Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T23:00:45.321Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T23:05:49.982Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T23:08:22.136Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T23:10:20.162Z"}
+{"level":"info","message":"MongoDB Connected.","timestamp":"2018-10-30T23:11:16.442Z"}

@@ -8,37 +8,23 @@ block appContent
             div
                 label(for='login') Nazwa:
                 input(type='text', placeholder='wpisz nazwe' name='name')
-                button.new-size Dodaj nowy rozmiar
                 
-                
-                script. 
-                    document.querySelector(".new-size").addEventListener("click", (e) => {
-                        e.preventDefault();
-                        let fieldsetsQuantity = document.querySelectorAll(".sizes-container > fieldset").length - 1;
-                        var fieldset = document.createElement("fieldset");
-                        fieldset.innerHTML = `  <input type="text" name="size_price[${fieldsetsQuantity}][name]" />
-                                                <input type="number" name="size_price[${fieldsetsQuantity}][size]" />
-                                                <input type="number" name="size_price[${fieldsetsQuantity}][price]" />`;
+                div.sizes-container
+                    .sizes
+                        input(type="text" name="name" required)
+                        input(type="number" name="size" min="5" step="1" required) 
+                        input(type="number" name="price" min="0" step="0.01" required)
+                        button.new-size Dodaj nowy rozmiar
 
-                        document.querySelector(".sizes-container").appendChild(fieldset);
-                    });
-                    
-                    //TODO form moze byc na zewnatrz, nie trzeba w srodku dodwawac - poczyrtac  
-            div.sizes-container
-                .sizes
-                    input(type="text" name="size_price[0][name]")
-                    input(type="number" name="size_price[0][size]") 
-                    input(type="number" name="size_price[0][price]")
-                .sizes
-                    input(type="text" name="size_price[1][name]")
-                    input(type="number" name="size_price[1][size]") 
-                    input(type="number" name="size_price[1][price]")
-                .sizes
-                    input(type="text" name="size_price[2][name]")
-                    input(type="number" name="size_price[2][size]") 
-                    input(type="number" name="size_price[2][price]")
-
-
+            div
+                ul.sizes-result
+                    li 1
+                    li 2
+                    li 3
+                ul.sizes-result
+                    li 1
+                    li 2
+                    li 3
             //- div
             //-     label(for='password') Dodatki:
             //-     input(type='text', placeholder='wpisz email' name='extras')
@@ -61,3 +47,5 @@ block appContent
             //-         option(value=`${variable}`)= `${variable} ++++ ${index}`
 
             button(type='submit') Dodaj pizze
+
+            script(src='/js/new_pizza.js')
