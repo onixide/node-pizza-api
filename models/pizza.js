@@ -22,7 +22,7 @@ function validatePizza(obj) {
         //TODO dodac na froncie w html min max i inne validacje
         //TODO z fi to nie wiadomo, lepiej zeby dalo sie ustawic (moze mała srednia duza ogromna czy cos);
             name: Joi.string(),
-            fi30: Joi.number().min(0),
+            fi30: Joi.number().min(0).required(),
             fi40: Joi.number().min(0),
             fi50: Joi.number().min(0),
             components: Joi.array().items(Joi.string().valid("ser", "szynka", "pieczarki", "szpinak")),

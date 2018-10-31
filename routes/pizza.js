@@ -28,9 +28,10 @@ router.post('/', async (req, res, next) => {
         // const result = validatePizza(req.body);
         // if (result.error) {
         //     //zwracanie pola message z obiektu error z joi'a. gdy blad ofc
-        //     return res.status(400).send(result.error.details[0].message + " check");
-        //     // return res.status(400).send(result.error);
-        //     // return res.status(404).send(result.error);
+        //     // return res.status(401).send(result.error.details[0].message + " check");
+        //     return res.status(401).send(result.error);
+        // //     // return res.status(400).send(result.error);
+        // //     // return res.status(404).send(result.error);
         // }
         console.log(req.body);
         console.log("XXX");

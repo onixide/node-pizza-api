@@ -4,7 +4,6 @@ block appContent
     h2 new pizza view
     .new-pizza-wrapper   
         h3 Dane pizzy
-        form(method='POST' action='/orders/pizza')
             div
                 label(for='login') Nazwa:
                 input(type='text', placeholder='wpisz nazwe' name='name')
@@ -16,12 +15,12 @@ block appContent
                         input(type="number" name="price" min="0" step="0.01" required)
                         button.new-size Dodaj nowy rozmiar
 
-            div
-                ul.sizes-result
+            div.sizes-result
+                ul
                     li 1
                     li 2
                     li 3
-                ul.sizes-result
+                ul
                     li 1
                     li 2
                     li 3
@@ -46,6 +45,6 @@ block appContent
             //-     each variable, index in variables
             //-         option(value=`${variable}`)= `${variable} ++++ ${index}`
 
-            button(type='submit') Dodaj pizze
+            button.new-pizza Dodaj nową pizzę
 
             script(src='/js/new_pizza.js')
